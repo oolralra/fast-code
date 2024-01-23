@@ -15,7 +15,7 @@ phases:
   build: # 빌드 명령
     commands:
       - IMAGE_TAG=$CODEBUILD_BUILD_NUMBER #이미지빌드(build번호 붙여서)
-      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG -f ./main
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG ./main
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ECR/$IMAGE_REPO_NAME:$IMAGE_TAG
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ECR/$IMAGE_REPO_NAME:latest
   post_build:
