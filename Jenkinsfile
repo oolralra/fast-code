@@ -1,9 +1,7 @@
 pipeline {
     agent any
    
-    tools {
-        // jenkins관리에서 maven같은 빌드툴을 정의해놓고 불러올 수 있다.
-    }
+
     environment {
        GITWEBADD = 'https://github.com/oolralra/fast-code.git'
         // 환경변수 정의 가능.
