@@ -12,7 +12,7 @@ def main():
             <title>Main Page</title>
         </head>
         <body>
-            <h1>Welcome to Main Page!!!!!!!</h1>
+            <h1>Welcome to Main Page</h1>
             <a href="/board">Go to Board</a>
         </body>
     </html>
