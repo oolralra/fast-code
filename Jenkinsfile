@@ -74,13 +74,13 @@ pipeline {
         }
         
         stage('image push') {
-        // 이미지 빌드
+        // 이미지 push
             steps {
                 
                 withDockerRegistry(credentialsId: DOCKERHUBCREDENTIAL, url: '') {
                     sh "docker push ${DOCKERHUB}:${currentBuild.number}"
                     sh "docker push ${DOCKERHUB}:latest"
-
+                }
             }
        
             post {
