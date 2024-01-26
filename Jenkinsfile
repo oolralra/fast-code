@@ -72,6 +72,27 @@ pipeline {
                 }
             }
         }
+        
+        stage('image push') {
+        // 이미지 빌드
+            steps {
+                
+                withDockerRegistry(credentialsId: DOCKERHUBCREDENTIAL, url: '') {
+                    sh "docker push ${DOCKERHUB}:${currentBuild.number}"
+                    sh "docker push ${DOCKERHUB}:latest"
+
+            }
+       
+            post {
+            // 상단 steps의 성공 혹은 실패에 따라 수행할 동작 정의
+                failure {
+                    echo 'image push failure'
+                }
+                success {
+                    echo 'image push success'
+                }
+            }
+        }
 
     }
 }
