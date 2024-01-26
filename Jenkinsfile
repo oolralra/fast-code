@@ -123,7 +123,8 @@ pipeline {
                 slackSend (channel: '#dep02', color: '#FFFF00', message:
                 "MANIFEST UPDATE SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
                 
-                echo 'k8s manifest file update success'  
+                echo 'k8s manifest file update success'
+                // ㅇㅇㅇ
                 }
             }
         }
